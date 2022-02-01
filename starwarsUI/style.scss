@@ -74,11 +74,13 @@ body, #app {
       height: 2rem;
       border-radius: 50%;
       background-color: $active;
+      border: 2px solid $iddle;
     }
     &-line {
       position: absolute;
       height: 2px;
-      width: 100%;
+      width: 97%;
+      left: 1rem;
       background-color: $active;
     }
   }
