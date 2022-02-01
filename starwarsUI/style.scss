@@ -1,11 +1,15 @@
+$background: #060447;
+$active: #FFF38A;
+$iddle: #827B68;
+
 body, #app {
   margin: 0;
-  background: #060447;
+  background: $background;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #FFF38A;
+  color: $active;
   margin-top: 60px;
 }
 
@@ -13,6 +17,7 @@ body, #app {
   display: flex;
   justify-content: space-between;
   width: 70%;
+  min-width: 60rem;
   margin: 8.25rem auto;
   margin-bottom: 6.6rem;
   .description {
@@ -34,13 +39,11 @@ body, #app {
       line-height: 49px;
     }
     &__synopsis {
-      height: 90px;
-      width: 422px;
-      left: 187px;
-      top: 319px;
+      width: 70%;
     }
   }
   .date {
+    margin-right: 3.25rem;
     font-family: 'Amethysta';
     font-size: 15rem;
     font-weight: 700;
@@ -51,6 +54,7 @@ body, #app {
 
 .navbar {
   width: 70%;
+  min-width: 60rem;
   margin: 0 auto;
   display: flex;
   &__arrows {
@@ -69,13 +73,13 @@ body, #app {
       width: 2rem;
       height: 2rem;
       border-radius: 50%;
-      background-color: #FFF38A;
+      background-color: $active;
     }
     &-line {
       position: absolute;
       height: 2px;
       width: 100%;
-      background-color: #FFF38A;
+      background-color: $active;
     }
   }
 }
