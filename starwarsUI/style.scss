@@ -1,0 +1,26 @@
+body, #app {
+  margin: 0;
+  background: #060447;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #FFF38A;
+  margin-top: 60px;
+}
+
+.movie {
+  display: flex;
+  .description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .info {
+    font-size: 1.25rem;
+    &__title {
+      font-size: 2.5rem;
+    }
+  }
+}
+
