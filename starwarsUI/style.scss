@@ -61,27 +61,71 @@ body, #app {
     width: 7.5rem;
     display: flex;
     justify-content: space-between;
+    icon {
+      path {
+        fill: $iddle;
+      }
+      &.active path {
+        fill: $active;
+      }
+    }
   }
   &__timeline {
-    position: relative;
-    margin-left: 6.25rem;
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    &-dot {
-      width: 2rem;
-      height: 2rem;
-      border-radius: 50%;
-      background-color: $active;
-      border: 2px solid $iddle;
-    }
-    &-line {
-      position: absolute;
-      height: 2px;
-      width: 97%;
-      left: 1rem;
-      background-color: $active;
+    flex-grow: 1;
+    li {
+      list-style: none;
+      position: relative;
+      flex-grow: 1;
+      .line {
+        &::before, &::after {
+          content: '';
+          position: absolute;
+          background: $active;
+          opacity: 0.4;
+          height: 2px;
+          right: 36px;
+          left: 0px;
+        }
+        &::after {
+          opacity: 1;
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform 500ms ease-out;
+        }
+      }
+      &::after {
+        content: '';
+        right: 0;
+        position: absolute;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        border: 2px solid $iddle;
+        background: $active;
+        opacity: 0.4;
+        transform: translateY(-50%);
+      }
+      &.active {
+        &::after {
+          opacity: 1;
+          transition-delay: 500ms;
+        }
+        .line {
+          &::after {
+            transform: scaleX(1);
+          }
+        }
+      }
+      &:first-child {
+        .line {
+          &::before, &::after {
+            content: none;
+          }
+        }
+      }
     }
   }
 }
