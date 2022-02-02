@@ -32,14 +32,15 @@ body, #app {
     position: relative;
     .info {
       position: absolute;
-      opacity: 1;
       transition: 500ms ease-out all;
+      opacity: 0;
+      &.active{
+        opacity: 1;
+      }
       &.right {
-        opacity: 0;
         transform: translateX(50px);
       }
       &.left {
-        opacity: 0;
         transform: translateX(-50px);
       }
     }
@@ -128,15 +129,22 @@ body, #app {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    icon {
+    button {
+      border: none;
+      background-color: $background;
       display: flex;
       align-items: center;
+      pointer-events: none;
       path {
         fill: $iddle;
       }
-      &.active path {
-        fill: $active;
-      }
+      &.active {
+        pointer-events: auto;
+        cursor: pointer;
+        path {
+          fill: $active;
+        }
+      } 
     }
   }
   &__timeline {
