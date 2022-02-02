@@ -20,12 +20,14 @@ body, #app {
   min-width: 60rem;
   margin: 8.25rem auto;
   margin-bottom: 6.6rem;
+
   .description {
     width: 55%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
+
   .info {
     font-family: Montserrat;
     font-size: 1.25rem;
@@ -43,13 +45,28 @@ body, #app {
       width: 80%;
     }
   }
+
   .date {
     font-family: 'Amethysta';
     font-size: 15rem;
     font-weight: 700;
     line-height: 12rem;
     display: flex;
+    .decade, .year {
+      width: 135px;
+      position: relative;
+      .number {
+        position: absolute;
+        opacity: 1;
+        transition: 500ms ease-out all;
+        &:not(.active) {
+          transform: translateX(50px);
+          opacity: 0;
+        }
+      }
+    }
   }
+  
   .image-section {
     width: 422px;
     height: 604px;
@@ -93,7 +110,10 @@ body, #app {
     width: 7.5rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     icon {
+      display: flex;
+      align-items: center;
       path {
         fill: $iddle;
       }
