@@ -28,6 +28,23 @@ body, #app {
     justify-content: space-between;
   }
 
+  .infos-wrapper {
+    position: relative;
+    .info {
+      position: absolute;
+      opacity: 1;
+      transition: 500ms ease-out all;
+      &.right {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      &.left {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+    }
+  }
+
   .info {
     font-family: Montserrat;
     font-size: 1.25rem;
@@ -66,7 +83,7 @@ body, #app {
       }
     }
   }
-  
+
   .image-section {
     width: 422px;
     height: 604px;
