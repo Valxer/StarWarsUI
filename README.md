@@ -8,7 +8,6 @@ Final product - https://starwars-ui.netlify.app/
 ## Objectives
 + Reproducing a Figma model given 
 + Reproducing all the animations faithfully
-+ Implementing a responsive design
 
 ## Technologies
 + HTML/CSS
